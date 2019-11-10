@@ -1,7 +1,7 @@
 # name: discourse-synapse
 # about: Login
-# version: 0.0.1
-# authors: Sebastian Hädrich
+# version: 1.0.0
+# authors: Sebastian Hädrich, boypoint.de
 # url: https://github.com/boypoint/discourse-synapse
 
 after_initialize do
