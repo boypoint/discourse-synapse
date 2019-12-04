@@ -7,7 +7,7 @@ class SynapseauthController < ApplicationController
 
     if(inputData['user'].present? && inputData['user']['id'].present? && inputData['user']['password'].present?)
       authUser = User.find_by_username_or_email(inputData['user']['id'].split(":")[0][1..-1].downcase);
-      if(authUser.present? && authUser.confirm_password?(inputData['user']['password']))
+      if(authUser.present? && authUser.confirm_password?(inputData['user']['password']) && authUser.trust_level >= 1)
         return_msg = {"auth": {"success": true, "mxid": inputData['user']['id'], "profile": {"display_name": authUser.username}}};
       end
     end
